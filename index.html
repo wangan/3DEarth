@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="./index.css">
+    <script src="https://cdn.bootcss.com/three.js/r62/three.min.js"></script>
+    <script src="./3dearth.js"></script>
+    <title>3D 地球</title>
+</head>
+
+<body>
+    <div class="v-line"></div>
+    <div class="h-line"></div>
+    <script>
+        var earth = new Earth({
+            width: window.innerWidth,
+            height: window.innerHeight,
+            fps: 25
+        });
+        document.body.appendChild(earth.canvas);
+
+        window.addEventListener("mousedown", function (event) {
+            console.log(window.earthMesh.rotation.y)
+
+            earth.onDocumentMouseDown(event);
+        })
+    </script>
+</body>
+
+</html>
